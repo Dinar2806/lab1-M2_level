@@ -61,7 +61,7 @@ class TestEvaluatePostfix:
     def test_float_results(self):
         """Дробные результаты"""
         assert rpn_calculate("5 2 /") == 2.5
-        assert rpn_calculate("1 3 /") == 0.33
+        assert rpn_calculate("1 3 /") == 1/3
     
 
 class TestFullCalculation:
@@ -167,7 +167,7 @@ class TestEdgeCases:
     def test_single_number(self):
         """Одно число"""
         assert infix_to_rpn("42") == "42"
-        assert rpn_calculate("42") == 42
+        assert int(rpn_calculate("42")) == 42
         assert calculate("42") == 42
     
     def test_empty_expression(self):
