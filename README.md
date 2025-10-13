@@ -61,7 +61,7 @@
 - Клонировать
 ```git clone https://github.com/Dinar2806/lab1-M2_level.git```
 - Перейит в корень проекта
-```cd lab1-M2_level.git```
+```cd lab1-M2_level```
 - установить пакеты и библиотеки
 ```pip install -r requirements.txt```
 
