@@ -38,8 +38,9 @@ def main():
             exit(0)
         try:
             result = calculate(expr=expression)
-        except Exception:
+        except Exception as error:
             result = None
+            print(f"{error}")
         
         print(result)
 
