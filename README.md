@@ -59,7 +59,7 @@
 ## Инструкция к исользованию
 ### клонировать репозиторий и установить библиотеки
 - Клонировать
-```git clone htpps://github.com/Dinar2806/lab1-M2_level.git```
+```git clone https://github.com/Dinar2806/lab1-M2_level.git```
 - Перейит в корень проекта
 ```cd lab1-M2_level.git```
 - установить пакеты и библиотеки
