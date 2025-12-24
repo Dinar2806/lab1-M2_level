@@ -19,23 +19,36 @@ def input_checker(inputExpr: str):
     return inputExpr
     
 
-def input_corrector(inputExpr):       
+def input_corrector(inputExpr):
     """
     Функция корректирует входное выражение, игнорируя 
-    все символы, которые не имеют отношения к выражению
+    все символы, которые не имеют отношения к выражению.
+    Также добавляет 0 перед точкой, если точка не следует за цифрой.
     Входные данные: inputExpr: string
-    Выходные данные: откорректиррованная строка(выражение)
+    Выходные данные: откорректированная строка(выражение)
     """
 
-    output = "" 
+    output = ""
     alphabet = "0123456789-+*/()%. "
     inputExpr = inputExpr.replace(' ', '')
 
+    # Обрабатываем входную строку, оставляя только допустимые символы
     for i in inputExpr:
-        if alphabet.__contains__(i):
+        if i in alphabet:
             output += i
-        else: continue
 
+    # Обрабатываем точки, которые не следуют за цифрами
+    i = 0
+    while i < len(output):
+        if output[i] == "." and (i == 0 or not output[i-1].isdigit()):
+            output = output[:i] + "0" + output[i:]
+            i += 1  # Пропускаем добавленный ноль
+        i += 1
+
+    # Дополнительная проверка на случай, если точка осталась в начале строки
+    if output and output[0] == ".":
+        output = "0" + output
+        
     return output
 
 def str_to_float_round(token: str, n: int) -> float: #Преобразование токена во float с n знаков после запятой
